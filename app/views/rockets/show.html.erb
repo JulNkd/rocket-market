@@ -1,0 +1,10 @@
+<h1><%= @rocket.name %></h1>
+<p ><%= @rocket.price %></p>
+<p><%= @rocket.address %></p>
+<p><%= @rocket.description %></p>
+<p><%= @rocket.capacity %></p>
+
+<%= link_to "Explode this rocket",
+    rocket_path(@rocket),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
