@@ -1,0 +1,7 @@
+<h1>salut frérot</h1>
+<%= simple_form_for [@rocket, @reservation] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :travelers %>
+  <%= f.submit %>
+<% end %>

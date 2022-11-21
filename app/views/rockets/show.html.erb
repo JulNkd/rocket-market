@@ -8,3 +8,7 @@
     rocket_path(@rocket),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
+
+<%= link_to "Book this rocket",
+    new_rocket_reservation_path(@rocket.id)
+  %>
