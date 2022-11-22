@@ -1,7 +1,13 @@
-<h1>salut frérot</h1>
-<%= simple_form_for [@rocket, @reservation] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+<h1>Book your rocket</h1>
+<%# <script> function func(){
+   document.getElementsByClassName('flatpickr-input').classList.add('active')
+  };
+</script> %>
+
+<div class="flatpickr-input">
+  <%= simple_form_for [@rocket, @reservation] do |f| %>
+  <%= f.input :start_date, as: :string, input_html: { class: "datepicker" } %>
   <%= f.input :travelers %>
   <%= f.submit %>
 <% end %>
+</div>
