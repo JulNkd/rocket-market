@@ -1,5 +1,6 @@
 const path    = require("path")
 const webpack = require("webpack")
+const flatpickr = require("flatpickr");
 
 module.exports = {
   mode: "production",
