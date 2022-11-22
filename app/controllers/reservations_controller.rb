@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_rocket, only: %i[new create show]
+  before_action :set_rocket, only: %i[new create destroy show]
 
   def new
     @reservation = Reservation.new
@@ -8,6 +8,8 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    date = params[:reservation][:start_date].split
+    @reservation.end_date = date[2]
     @reservation.user = current_user
     authorize @rocket
     @reservation.rocket = @rocket
@@ -19,10 +21,18 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
+    authorize @rocket
+    @reservation.destroy
+    redirect_to profile_path, status: :see_other
   end
 
   def show
     authorize @rocket
+  end
+
+  def accept
+    @reservation.status == true
   end
 
   private

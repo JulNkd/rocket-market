@@ -1,6 +1,25 @@
-<h1>hello le profil</h1>
+<h1>Your rockets</h1>
 <ul>
+<div>
+<% if @rockets.empty? %>
+<%= "No rockets created" %>
+
+<% else %>
     <% @rockets.each do |rocket| %>
-      <li><%= rocket.name %></li>
+    <%= link_to rocket.name, rocket_path(rocket) %> <br>
+    <% if @reservations.empty?  %>
+    <%= "No bookings created" %>
+    <% else %>
+    is booked from
+    <% @reservations.each do |reservation| %>
+    <li><%= reservation.start_date%> to <%=reservation.end_date%>
+    <%= link_to "Explode this booking",
+         rocket_reservation_path(rocket, reservation),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
     <% end %>
+    <% end %>
+    <% end %>
+    <% end %>
+    </div>
+    </ul>
   </ul>
