@@ -1,6 +1,8 @@
-<h1>COUCOU</h1>
-<ul>
-  <% @rockets.each do |rocket| %>
-    <li><%= link_to rocket.name, rocket_path(rocket) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>COUCOU</h1>
+  <ul>
+    <% @rockets.each do |rocket| %>
+      <li><%= link_to rocket.name, rocket_path(rocket) %></li>
+    <% end %>
+  </ul>
+</div>
