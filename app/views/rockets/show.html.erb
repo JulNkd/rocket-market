@@ -5,12 +5,17 @@
   <p><%= @rocket.description %></p>
   <p><%= @rocket.capacity %></p>
 
-  <%= link_to "Explode this rocket",
-      rocket_path(@rocket),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
+  <% if policy(@rocket).edit? %>
+    <%= link_to "Explode this rocket",
+        rocket_path(@rocket),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
 
-  <%= link_to "Book this rocket",
-      new_rocket_reservation_path(@rocket.id)
+    <%= link_to "Edit this rocket",
+      edit_rocket_path(@rocket.id)
     %>
+  <% end %>
+  <%= link_to "Book this rocket",
+    new_rocket_reservation_path(@rocket.id)
+  %>
 </div>

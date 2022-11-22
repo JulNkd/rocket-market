@@ -3,11 +3,13 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    authorize @rocket
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
+    authorize @rocket
     @reservation.rocket = @rocket
     if @reservation.save
       redirect_to rocket_reservation_path(@rocket, @reservation)
@@ -20,6 +22,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    authorize @rocket
   end
 
   private
