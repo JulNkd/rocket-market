@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
 
   resources :rockets do
-    resources :reservations, only: %i[new create destroy show]
+    resources :reservations, only: %i[new create show]
+  end
+
+  resources :reservations, only: %i[destroy] do
     member do
-      get :accept
+      patch :accept
     end
   end
 end

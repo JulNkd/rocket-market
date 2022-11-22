@@ -32,7 +32,9 @@ class ReservationsController < ApplicationController
   end
 
   def accept
-    @reservation.status == true
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+    @reservation.update!(status: true)
   end
 
   private
@@ -42,6 +44,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :travelers)
+    params.require(:reservation).permit(:start_date, :end_date, :travelers, :status)
   end
 end

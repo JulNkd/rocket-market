@@ -14,6 +14,10 @@ class ReservationPolicy < ApplicationPolicy
     true
   end
 
+  def accept?
+    true
+  end
+
   def destroy?
     true
   end
