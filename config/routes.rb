@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :rockets do
-    resources :reservations, only: %i[new create delete]
+    resources :reservations, only: %i[new create delete show]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
