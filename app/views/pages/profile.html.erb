@@ -13,18 +13,19 @@
     is booked from
     <% @reservations.each do |reservation| %>
     <li><%= reservation.start_date%> to <%=reservation.end_date%>
+    <% if reservation.status != true  %>
     <%= link_to "Accept this booking",
          accept_reservation_path(reservation), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %>
-         <% if reservation.status = true  %>
+         <% else %>
          <% "Reservation accepted !" %>
     <%= link_to "Explode this booking",
          rocket_reservation_path(rocket, reservation),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-    <% end %>
-    <% end %>
-    <% end %>
-    <% end %>
-    <% end %>
+         <% end %>
+      <% end %>
+  <% end %>
+  <% end %>
+   <% end %>
     </div>
     </ul>
   </ul>
