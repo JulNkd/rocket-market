@@ -1,5 +1,5 @@
 class RocketsController < ApplicationController
-  before_action :set_rocket, only: [:show, :edit, :update, :destroy]
+  before_action :set_rocket, only: %i[show edit update destroy]
 
   def index
     @rockets = Rocket.all
@@ -7,11 +7,13 @@ class RocketsController < ApplicationController
 
   def new
     @rocket = Rocket.new
+    authorize @rocket
   end
 
   def create
     @rocket = Rocket.new(rocket_params)
     @rocket.user = current_user
+    authorize @rocket
     if @rocket.save
       redirect_to rocket_path(@rocket)
     else
@@ -20,12 +22,15 @@ class RocketsController < ApplicationController
   end
 
   def show
+    authorize @rocket
   end
 
   def edit
+    authorize @rocket
   end
 
   def update
+    authorize @rocket
     if @rocket.update(rocket_params)
       redirect_to rocket_path(@rocket)
     else
@@ -34,6 +39,7 @@ class RocketsController < ApplicationController
   end
 
   def destroy
+    authorize @rocket
     @rocket.destroy
     redirect_to rockets_path, status: :see_other
   end
