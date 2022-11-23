@@ -2,10 +2,10 @@
   <div class="info-banner">
     <h1><%= @rocket.name %></h1>
   </div>
-  <p ><%= @rocket.price %></p>
-  <p><%= @rocket.address %></p>
-  <p><%= @rocket.description %></p>
-  <p><%= @rocket.capacity %></p>
+  <p>Price: <%= @rocket.price %></p>
+  <p>Address: <%= @rocket.address %></p>
+  <p>Description: <%= @rocket.description %></p>
+  <p>Capacity: <%= @rocket.capacity %></p>
 
   <% if policy(@rocket).edit? %>
   <div class="simple-btn">
