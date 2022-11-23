@@ -27,3 +27,23 @@
   border-radius: 4px;
 
 }
+
+
+.info-banner {
+  width: auto;
+  height: 200px;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("info.jpeg");
+  background-size: cover;
+  background-position: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+  }
+}

@@ -1,8 +1,10 @@
-<%= simple_form_for(rocket) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :capacity %>
-  <%= f.submit %>
-<% end %>
+<div class="form-container">
+  <%= simple_form_for(rocket) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :capacity %>
+    <%= f.submit class:"button-60"%>
+  <% end %>
+</div>
