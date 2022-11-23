@@ -1,4 +1,4 @@
-<h1>Your rockets</h1>
+<h1>Manage your rocket's bookings</h1>
 <ul>
 <div>
 <% if @rockets.empty? %>
@@ -18,14 +18,25 @@
          accept_reservation_path(reservation), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %>
          <% else %>
          <% "Reservation accepted !" %>
+         <% end %>
     <%= link_to "Explode this booking",
-         rocket_reservation_path(rocket, reservation),
+         reservation_path(reservation),
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
          <% end %>
-      <% end %>
   <% end %>
   <% end %>
    <% end %>
-    </div>
+   </ul>
+   </div>
+<div>
+<h1>Your bookings</h1>
+<ul>
+   <% @reservations.each do |reservation| %>
+   <%= reservation.rocket.name %><br>
+   <li> <%= reservation.start_date%> to <%=reservation.end_date%>
+   <%= link_to "Explode this booking",
+         reservation_path(reservation),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <% end %></li>
     </ul>
-  </ul>
+    </div>
