@@ -1,40 +1,34 @@
 
-  <div class="cards">
-  <% if @rockets.empty? %>
-<%= "No rockets created" %>
-
-<% else %>
-    <% @rockets.each do |rocket| %>
-      <div class="card-trip">
-        <a href="<%=rocket_path(rocket)%>">
-          <img class="card-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= rocket.name %></h2>
-              <p><%= rocket.address %></p>
-              <p><%= rocket.description %></p>
-                  <% if @reservations.empty?  %>
-                  <%= "No bookings created" %>
-                  <% else %>
-                  <% @reservations.each do |reservation| %>
-    <%= reservation.start_date%> to <%=reservation.end_date%>
-    <% if reservation.status != true  %>
-    <%= link_to "Accept this booking",
-         accept_reservation_path(reservation), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %><br>
-         <% else %>
-         <% "Reservation accepted !" %>
-         <% end %>
-    <%= link_to "Explode this booking",
-         reservation_path(reservation),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%><br>
-         <% end %>
-    <% end %>
-     <% end %>
-    <% end %>
-            </div>
+<div class="rocket-cards">
+  <% @rockets.each do |rocket| %>
+    <div class="card-trip">
+      <a href="<%=rocket_path(rocket)%>">
+        <img class="card-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= rocket.name %></h2>
+            <p><%= rocket.address %></p>
+            <p><%= rocket.description %></p>
+            <% if @reservations.empty?  %>
+              <%= "No bookings created" %>
+            <% else %>
+              <% @reservations.each do |reservation| %>
+                <% if reservation.rocket_id == rocket.id %>
+                  <%= reservation.start_date%> to <%=reservation.end_date%>
+                  <% if reservation.status != true  %>
+                    <%= link_to "Accept this booking",
+                        accept_reservation_path(reservation), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %><br>
+                    <%= link_to "Explode this booking",
+                      reservation_path(reservation),
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%><br>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
           </div>
-        </a>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-      </div>
-
-  </div>
+        </div>
+      </a>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    </div>
+  <% end %>
+</div>

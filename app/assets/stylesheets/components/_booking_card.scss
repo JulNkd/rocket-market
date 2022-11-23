@@ -1,11 +1,15 @@
-.cards {
-  display: grid;
+.booking-cards {
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  justify-content: center;
 }
 
 .card-trip {
   background-color: #1D1D1D;
+  width: 400px;
+  border-radius: 8px;
+  margin: 20px;
   a {
     overflow: hidden;
     text-decoration: none;
@@ -16,6 +20,7 @@
     height: 200px;
     width: 100%;
     object-fit: cover;
+    border-radius: 8px 8px 0px 0px;
   }
   h2 {
     font-size: 16px;
@@ -26,6 +31,12 @@
     font-size: 12px;
     opacity: .7;
     margin: 0;
+  }
+
+  .avatar-bordered {
+    position: relative;
+    left: 350px;
+    bottom: 110px;
   }
 }
 

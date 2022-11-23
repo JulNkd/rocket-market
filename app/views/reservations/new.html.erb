@@ -8,8 +8,8 @@
 
     <div class="flatpickr-input">
       <%= simple_form_for [@rocket, @reservation] do |f| %>
-      <%= f.input :start_date, as: :string, input_html: { class: "datepicker" } %>
-      <%= f.input :travelers %>
+      <%= f.input :start_date, label: 'Select dates', as: :string, input_html: { class: "datepicker"} %>
+      <%= f.input :travelers, label: 'Select number of travelers' %>
       <%= f.submit class:"button-60"%>
     <% end %>
     </div>
