@@ -1,6 +1,17 @@
-<div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <%= link_to "Voir toutes les fusées", rockets_path %>
-</div>
-
+<body class="landing">
+    <div class="devise-links">
+      <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"button-60" %>
+      <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class:"button-60" %>
+      <%= link_to "Log in", new_user_session_path, class:"button-60" %>
+      <% end %>
+    </div>
+    <div class="container d-flex justify-content-center">
+      <div class="accueil">
+        <h1 class="landing-title">Welcome to the Rocket Market 🚀</h1>
+        <h3 class="landing-title">The only website in the universe to book a rocket with your friends</h3>
+        <%= link_to "Embark for a travel you will never forget", rockets_path, class:"button-85" %>
+      </div>
+    </div>
+</body>
