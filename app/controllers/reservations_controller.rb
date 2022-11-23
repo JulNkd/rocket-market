@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_rocket, only: %i[new create destroy show]
+  before_action :set_rocket, only: %i[new create show]
 
   def new
     @reservation = Reservation.new
@@ -14,7 +14,8 @@ class ReservationsController < ApplicationController
     authorize @rocket
     @reservation.rocket = @rocket
     if @reservation.save
-      redirect_to rocket_reservation_path(@rocket, @reservation)
+      redirect_to profile_path, status: :see_other
+      # redirect_to rocket_reservation_path(@rocket, @reservation)
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,7 +23,7 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(params[:id])
-    authorize @rocket
+    authorize @reservation
     @reservation.destroy
     redirect_to profile_path, status: :see_other
   end
@@ -35,6 +36,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     authorize @reservation
     @reservation.update!(status: true)
+    redirect_to profile_path, status: :see_other
   end
 
   private
