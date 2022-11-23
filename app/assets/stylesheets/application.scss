@@ -20,11 +20,21 @@
 //General style
 body {
   background-color: #0E0E13;
+  color:white;
+}
+
+.color-placeholder {
+  color:black
 }
 
 h1 {
   color: white;
-  }
+}
+
+.form-container {
+  max-width: 700px;
+}
+
 .landing {
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.5),
@@ -57,4 +67,22 @@ h1 {
 
 .landing-title {
   font-weight: revert;
+}
+///
+
+.form-control {
+  background-color: white!important;
+  border-radius: 12px!important;
+  border: 0!important;
+  box-sizing: border-box!important;
+  color: #eee!important;
+  font-size: 18px!important;
+  height: 100%!important;
+  outline: 0!important;
+  padding: 15px !important;
+  width: 100%!important;
+}
+
+.form-control {
+  color: black!important;
 }
