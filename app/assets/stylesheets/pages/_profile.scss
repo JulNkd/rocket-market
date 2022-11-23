@@ -1,0 +1,22 @@
+body {
+  text-decoration: none;
+}
+
+.background-banner {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),
+    url(https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  color: white;
+  display: flex;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+  height: 100px;
+}
+
+.background-banner h1 {
+  text-align: center;
+  padding: 5px;
+}
