@@ -1,0 +1,19 @@
+
+  <div class="cards">
+    <% @reservations.each do |reservation| %>
+      <div class="card-trip">
+          <img class="card-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2> <%= reservation.rocket.name %></h2><br>
+              <%= reservation.start_date%> to <%=reservation.end_date%>
+   <%= link_to "Explode this booking",
+         reservation_path(reservation),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    <% end %>
+            </div>
+          </div>
+        </a>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+  </div>
