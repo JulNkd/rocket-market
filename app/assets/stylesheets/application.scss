@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/show";
 
 
 //Font
@@ -27,9 +28,11 @@ body {
   color:black
 }
 
-h1 {
+h1 p {
   color: white;
+
 }
+
 
 .form-container {
   max-width: 700px;
