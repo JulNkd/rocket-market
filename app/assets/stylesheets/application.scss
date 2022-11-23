@@ -11,3 +11,37 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.landing {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ), url(https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+}
+
+.devise-links {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  right: 0;
+}
+
+.accueil {
+  text-align: center;
+}
+
+.container {
+  align-items: center;
+  height: 100vh;
+}
+
+.forgot-password {
+  display: inline-block;
+}
+
+.landing-title {
+  font-weight: revert;
+}
