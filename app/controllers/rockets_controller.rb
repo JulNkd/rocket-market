@@ -2,7 +2,11 @@ class RocketsController < ApplicationController
   before_action :set_rocket, only: %i[show edit update destroy]
 
   def index
-    @rockets = Rocket.all
+    if params[:query].present?
+      @rockets = Rocket.search_by_name_and_address(params[:query])
+    else
+      @rockets = Rocket.all
+    end
   end
 
   def new
