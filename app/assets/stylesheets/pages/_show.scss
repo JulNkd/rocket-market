@@ -1,0 +1,43 @@
+/* Columns */
+.container-product {
+  padding-top: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 600px;
+}
+
+.left-column {
+  width: 60%;
+  position: relative;
+}
+
+.right-column {
+  width: 40%;
+  padding-left: 40px;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Left Column */
+.left-column img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.left-column img.active {
+  opacity: 1;
+}
