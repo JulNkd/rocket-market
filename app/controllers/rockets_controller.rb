@@ -28,6 +28,7 @@ class RocketsController < ApplicationController
 
   def show
     authorize @rocket
+    @user = current_user
   end
 
   def edit
