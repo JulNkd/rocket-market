@@ -17,4 +17,9 @@
   min-width: 25%;
   display: flex;
   align-items: center;
+  a {
+    float: right;
+    display: flex;
+    justify-content: flex-end;
+  }
 }
