@@ -3,6 +3,7 @@ class RocketsController < ApplicationController
 
   def index
     @rockets = Rocket.all
+    @user = current_user
   end
 
   def new
