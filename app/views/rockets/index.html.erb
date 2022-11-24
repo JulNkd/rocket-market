@@ -17,18 +17,17 @@
 <div class="container">
   <div class="banner">
     <div class="wrapper">
-    <h1>RENT YOUR DREAM ROCKET!</h1>
+      <h1>RENT YOUR DREAM ROCKET!</h1>
         <%= form_with url: rockets_path, method: :get, class: "form-banner" do %>
             <%= text_field_tag :query,
               params[:query],
               class: "banner-input p-1",
               placeholder: "Find a rocket or an address"
-
             %>
-        <button class="main-btn" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <% end %>
+            <button class="main-btn" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+         <% end %>
     </div>
   </div>
 </div>
