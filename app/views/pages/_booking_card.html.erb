@@ -10,7 +10,7 @@
             reservation_path(reservation),
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 
-            <%= cl_image_tag current_user.photo.key, :gravity=>"faces", :crop=>"thumb", class: "avatar-bordered"%>
+            <%= cl_image_tag current_user.photo.key, :gravity=>"faces", :crop=>"thumb", class: "card-trip-user avatar-bordered"%>
         </div>
       </a>
   </div>
