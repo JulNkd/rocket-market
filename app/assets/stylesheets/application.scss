@@ -61,8 +61,7 @@ h1 p {
 }
 
 .container {
-  align-items: center;
-  // height: 100vh;
+  align-items: center; 
 }
 
 .forgot-password {
@@ -89,4 +88,9 @@ h1 p {
 
 .form-control {
   color: black!important;
+}
+
+
+a:hover {
+  color: white;
 }
