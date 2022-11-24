@@ -1,21 +1,23 @@
-<div class="navbar-complete">
-  <div class="wrapper-nav">
-    <%= link_to rockets_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png" %>
-    <% end %>
+<div class="container">
+  <div class="navbar-complete">
+    <div class="wrapper-nav">
+      <%= link_to rockets_path, class: "navbar-brand" do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
+
+    <div class="nav-links">
+        <% if user_signed_in? %>
+          <%= link_to "Add a rocket", new_rocket_path, class: "dropdown-item" %>
+          <%= link_to "Profile", "http://localhost:3000/profile", class: "dropdown-item" %>
+          <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+        <% else %>
+          <%# <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%# </li> %>
+        <% end %>
+    </div>
   </div>
 
-  <div class="nav-links">
-      <% if user_signed_in? %>
-        <%= link_to "Add a rocket", new_rocket_path, class: "dropdown-item" %>
-        <%= link_to "Profile", "http://localhost:3000/profile", class: "dropdown-item" %>
-        <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-      <% else %>
-        <%# <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        <%# </li> %>
-      <% end %>
   </div>
 </div>
-
- </div>
