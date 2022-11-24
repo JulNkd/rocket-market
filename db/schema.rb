@@ -87,3 +87,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_191118) do
   add_foreign_key "reservations", "users"
   add_foreign_key "rockets", "users"
 end
+ 

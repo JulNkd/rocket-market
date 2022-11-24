@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @user = current_user
     authorize @rocket
   end
 
