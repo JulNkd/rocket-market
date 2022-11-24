@@ -10,7 +10,7 @@
                   <p><%= rocket.description %></p>
               </div>
             <h2 class="card-trip-pricing"><%= rocket.price %> $</h2>
-            <%= cl_image_tag current_user.photo.key, gravity: "faces", crop: "thumb", class: "card-trip-user avatar-bordered" %>
+            <%= cl_image_tag current_user.photo.key, gravity: :faces, crop: :thumb, class: "card-trip-user avatar-bordered" %>
           </div>
       </a>
     </div>
