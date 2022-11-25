@@ -27,8 +27,10 @@
         <h2><%= @rocket.price %>$</h2>
       </div>
       <div class="btn-container">
-        <% if policy(@rocket).edit? %>
-          <a href="<%=rocket_path(@rocket) %>" class="red-btn">Explode this rocket</a>
+        <% if policy(@rocket).destroy? %>
+          <%= link_to "Explode this rocket", rocket_path(@rocket), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "red-btn" %>
+          <% end %>
+          <% if policy(@rocket).edit? %>
           <a href="<%=edit_rocket_path(@rocket.id)%>" class="blue-btn">Edit this rocket</a>
         <% end %>
         <a href="<%=new_rocket_reservation_path(@rocket.id)%>" class="green-btn">Book this rocket</a>
