@@ -1,4 +1,6 @@
 .footer {
+  // position: absolute;
+  // width: 100%;
   background: #1D1D1D;
   display: flex;
   align-items: center;
@@ -30,4 +32,12 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.stick-footer {
+  margin-bottom: 160px;
+}
+
+.stick-footer-book {
+  margin-bottom: 290px;
 }
