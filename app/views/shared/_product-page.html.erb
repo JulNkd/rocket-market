@@ -32,8 +32,9 @@
           <% end %>
           <% if policy(@rocket).edit? %>
           <a href="<%=edit_rocket_path(@rocket.id)%>" class="blue-btn">Edit this rocket</a>
+        <% else %>
+          <a href="<%=new_rocket_reservation_path(@rocket.id)%>" class="green-btn">Book this rocket</a>
         <% end %>
-        <a href="<%=new_rocket_reservation_path(@rocket.id)%>" class="green-btn">Book this rocket</a>
       </div>
     </div>
 </div>
