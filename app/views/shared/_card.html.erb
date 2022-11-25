@@ -11,7 +11,7 @@
               <div>
                 <h2><%= rocket.name %></h2>
                 <p><%= rocket.address %></p>
-                <p><%= rocket.description %></p>
+                <p class="description-overflow"><%= rocket.description %></p>
                   <h2 class="card-trip-pricing"><%= rocket.price %> $</h2>
               </div>
             <%= cl_image_tag rocket.user.photo.key, gravity: :faces, crop: :thumb, class: "card-trip-user avatar-bordered" %>
