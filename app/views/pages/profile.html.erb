@@ -1,5 +1,8 @@
 <div class="container">
-  <div class="profil-banner"><h1>Manage your rocket's bookings</h1></div>
+  <div class="profil-banner">
+    <h1>Manage your rocket's bookings</h1>
+  </div>
+
     <div class="cards">
       <% @rockets.each do |rocket| %>
       <div class="card-trip">
@@ -35,10 +38,14 @@
         </div>
       </a>
     </div>
-  <% end %>
+    <% end %>
   </div>
+</div>
 
-  <div class="profil-banner"><h1>Your bookings</h1></div>
+<div class="profil-banner">
+  <h1>Your bookings</h1>
+</div>
+
     <div class="cards">
       <% @reservations.each do |reservation| %>
       <div class="card-trip">
@@ -60,6 +67,6 @@
         </div>
         </a>
       </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 </div>
