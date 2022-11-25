@@ -36,6 +36,9 @@
   opacity: 1;
   transition: all 0.3s ease;
   border-radius: 8px;
+  height: 395px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .left-column img.active {
