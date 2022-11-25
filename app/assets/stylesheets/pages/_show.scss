@@ -20,6 +20,8 @@
 .btn-container {
   display: flex;
   flex-direction: column;
+  display: -webkit-inline-box;
+  margin-top: 121.6px;
 
   a {
     margin-bottom: 10px;
