@@ -1,5 +1,65 @@
+<div class="container">
+  <div class="profil-banner"><h1>Manage your rocket's bookings</h1></div>
+    <div class="cards">
+      <% @rockets.each do |rocket| %>
+      <div class="card-trip">
+        <a href="<%=rocket_path(rocket)%>">
+        <% if rocket.photo.attached? %>
+          <%= cl_image_tag rocket.photo.key, class:"card-img"%>
+        <% else %>
+          <img class="card-img" src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1608&q=80">
+        <% end %>
+        <div class="card-trip-rockets">
+          <h2><%= rocket.name %></h2>
+          <p><%= rocket.address %></p>
+          <p><%= rocket.description %></p>
+          <% if @reservations.empty?  %>
+            <%= "No bookings created" %>
+          <% else %>
+            <% @reservations.each do |reservation| %>
+          <% if reservation.rocket_id == rocket.id %>
+          <div class="card-section">
+            <h2><%= reservation.start_date%> to <%=reservation.end_date%></h2>
+            <p class="a-hover" ><% if reservation.status != true  %>
+              <%= link_to "Accept this booking",
+                  accept_reservation_path(reservation), data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %></p>
+              <p class="a-hover" ><%= link_to "Explode this booking",
+                reservation_path(reservation),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p><br>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+          </div>
+          <%= cl_image_tag current_user.photo.key, gravity: :faces, crop: :thumb, class: "card-trip-user avatar-bordered"%>
+        </div>
+      </a>
+    </div>
+  <% end %>
+  </div>
 
-  <div class="background-banner"><h1>Manage your rocket's bookings</h1></div>
-    <%= render "rocket_card" %>
-  <div class="background-banner"><h1>Your bookings</h1></div>
-    <%= render "booking_card"%>
+  <div class="profil-banner"><h1>Your bookings</h1></div>
+    <div class="cards">
+      <% @reservations.each do |reservation| %>
+      <div class="card-trip">
+        <a href="<%=reservation_path(reservation)%>">
+        <% if reservation.rocket.photo.attached? %>
+          <%= cl_image_tag reservation.rocket.photo.key, class:"card-img"%>
+         <% else %>
+          <img class="card-img" src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1608&q=80">
+        <% end %>
+        <div class="card-trip-booking">
+          <div class="card-section">
+            <h2><%= reservation.rocket.name %></h2>
+            <%= reservation.start_date%> to <%=reservation.end_date%><br>
+            <p class="a-hover" ><%= link_to "Explode this booking",
+            reservation_path(reservation),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
+            <%= cl_image_tag current_user.photo.key, gravity: :faces, crop: :thumb, class: "card-trip-user avatar-bordered"%>
+          </div>
+        </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
