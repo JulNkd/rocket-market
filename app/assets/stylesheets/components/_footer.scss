@@ -1,6 +1,7 @@
 .footer {
-  // position: absolute;
-  // width: 100%;
+  width: 100%;
+  // margin-top: auto;
+  
   background: #1D1D1D;
   display: flex;
   align-items: center;
@@ -8,9 +9,9 @@
   height: 100px;
   padding: 0px 80px;
   color: rgba(255, 255, 255, 0.6);
-  left: 0;
-  bottom: 0;
-  margin-top: 30px;
+  // left: 0;
+  // position: sticky;
+  // bottom: -100px;
   .i-rocket {
     color: white;
     font-size: 25px;
@@ -34,10 +35,10 @@
   color: #D23333;
 }
 
-.stick-footer {
-  margin-bottom: 160px;
-}
+// .stick-footer {
+//   margin-bottom: 160px;
+// }
 
-.stick-footer-book {
-  margin-bottom: 290px;
-}
+// .stick-footer-book {
+//   margin-bottom: 290px;
+// }
