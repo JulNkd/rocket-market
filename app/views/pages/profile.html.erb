@@ -1,6 +1,6 @@
 <div class="container">
   <div class="profil-banner">
-    <h1>Manage your rocket's bookings</h1>
+    <h1>My rockets</h1>
   </div>
 
     <div class="cards">
@@ -34,16 +34,16 @@
             <% end %>
           <% end %>
           </div>
-          <%= cl_image_tag current_user.photo.key, gravity: :faces, crop: :thumb, class: "card-trip-user avatar-bordered"%>
+          <%= cl_image_tag rocket.user.photo.key, gravity: :faces, crop: :thumb, class: "card-trip-user avatar-bordered"%>
         </div>
       </a>
     </div>
+   </div>
     <% end %>
   </div>
-</div>
 
 <div class="profil-banner">
-  <h1>Your bookings</h1>
+  <h1>My bookings</h1>
 </div>
 
     <div class="cards">
@@ -62,11 +62,12 @@
             <p class="a-hover" ><%= link_to "Explode this booking",
             reservation_path(reservation),
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
-            <%= cl_image_tag current_user.photo.key, gravity: :faces, crop: :thumb, class: "card-trip-user avatar-bordered"%>
+            <%= cl_image_tag rocket.user.photo.key, gravity: :faces, crop: :thumb, class: "card-trip-user avatar-bordered"%>
           </div>
         </div>
         </a>
       </div>
       <% end %>
     </div>
+  </div>
 </div>
